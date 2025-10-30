@@ -231,7 +231,10 @@ const burnRecords = ref(null);
 
 let BatchBurnRecords = async () => {
   state.pageLoading = true;
-  const batchRecords = burnRecords.value.batchRecords;
+  const batchBurnRecords = burnRecords.value.batchRecords;
+  const batchRecords = batchBurnRecords.filter((item) => {
+    return item.burn && item.tokenBalance && Number(item.tokenBalance) > 0 && Number(item.burn) > 0 && Number(item.tokenBalance) >= Number(item.burn);
+  });
   if (batchRecords.length > 0) {
     proxy.$elmsg.success(`Start burning ${batchRecords.length} tokens`);
     const WalletType = localStorage.getItem("WalletType");
@@ -239,10 +242,10 @@ let BatchBurnRecords = async () => {
     if (res.success) {
       proxy.$elmsg.success("Burning successful");
     } else {
-      proxy.$elmsg.error(res.message);
+      proxy.$elmsg.error(res.msg);
     }
   } else {
-    proxy.$elmsg.error("No data");
+    proxy.$elmsg.error("No valid data");
   }
   state.pageLoading = false;
 };
@@ -257,7 +260,7 @@ let BatchCloseRecords = async () => {
     if (res.success) {
       proxy.$elmsg.success("Account reclaim successful");
     } else {
-      proxy.$elmsg.error(res.message);
+      proxy.$elmsg.error(res.msg);
     }
   } else {
     proxy.$elmsg.error("No data");

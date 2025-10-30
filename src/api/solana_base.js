@@ -191,6 +191,7 @@ export async function batchBurnTokens(walletType, burnRecords, sizes = 10) {
       msg: ""
     }
   } catch (e) {
+    console.log(e)
     return {
       success: false,
       burnRecords: burnRecords,
