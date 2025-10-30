@@ -1,0 +1,22 @@
+:root {
+  --el-bg-color: #0a0a0a !important;
+  --el-menu-item-height: 42px !important;
+  --el-color-primary: #9945FF !important;
+  --el-menu-active-color: #9945FF !important;
+  --el-color-primary-light-3: rgba(153, 69, 255, 0.6) !important;
+  --el-color-primary-dark-2: rgba(153, 69, 255, 0.6) !important;
+  --el-color-primary-light-5:rgba(153, 69, 255, 0.6) !important;
+  --el-color-primary-light-9: rgba(18, 18, 18, 0.25) !important;
+  --el-color-success: rgb(6, 197, 117) !important;
+  --el-color-success-light-3: rgba(6, 197, 117, 0.6) !important;
+  --el-color-success-dark-2: rgba(6, 197, 117, 0.6) !important;
+  --el-color-success-light-5:rgba(6, 197, 117, 0.6) !important;
+  --el-color-success-light-9: rgba(6, 197, 117, 0.25) !important;
+  --el-color-primary-light-7:#9945FF !important;
+  --el-text-color-primary: #fff !important;
+  --el-radio-text-color: #fff !important;
+  .el-menu--horizontal {
+    --el-menu-horizontal-height: 50px !important;
+  };
+  --el-bg-color-overlay: #141414 !important;
+}
